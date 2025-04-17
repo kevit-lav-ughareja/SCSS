@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// Variables
+// Operators
+$font-size:3rem + 2rem;
+
+// mixin
+// Parameter
+@mixin flex-center(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@mixin sameColor($par1,$par2,$par3){
+    color: rgb(7, 7, 7);
+    font-size: $font-size;
+    letter-spacing: $par1;
+    font-weight: $par2;
+    text-transform: $par3;
+}
+html{
+    font-size: 62.5%;
+}
+
+// Nesting
+.site-header{
+    @include flex-center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: #4bda2f;
+
+    p{
+        
+        @include sameColor(0.3rem,normal,capitalize);
+        &:hover{
+            color: #d15e12;
+        }
+    }
+   
+   
+    h1{
+        @include sameColor(1rem,bold,uppercase);
+
+        &:hover{
+            color: #d15e12;
+        }
+    }
+    ::after{
+        content: ' Hii Lav';
+        
+    }
+}
