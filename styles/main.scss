@@ -1,0 +1,40 @@
+@import "variables";
+@import "mixins";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+// Nesting
+.site-header{
+    @include flex-center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: #4bda2f;
+
+    p{
+        
+        @include sameColor(0.3rem,normal,capitalize);
+        &:hover{
+            color: #d15e12;
+        }
+    }
+   
+   
+    h1{
+        @include sameColor(1rem,bold,uppercase);
+
+        &:hover{
+            color: #d15e12;
+        }
+    }
+    ::after{
+        content: ' Hii Lav';
+        
+    }
+}
